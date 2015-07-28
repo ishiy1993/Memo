@@ -11,7 +11,7 @@ main = do contents <- filter (/= "") . lines <$> getContents
           utc <- getCurrentTime
           let dy = daytime tz utc
               tag = toTag args
-          appendFile "/home/iyou/memos/test.md" . unlines $ toMd dy tag contents
+          appendFile "/home/iyou/memos/memo.md" . unlines $ toMd dy tag contents
 
 toMd :: String -> String -> [String] -> [String]
 toMd dy tag (x:xs) = y:ys
